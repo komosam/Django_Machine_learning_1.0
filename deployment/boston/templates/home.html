@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+{% block content  %}
+<div class="container">
+    <form action="" method='POST'>
+        <div class="row">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+        </div>
+        <div class="row">
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </div>
+    </form>
+
+ <h3><small>Predicted Price:  {{ predictions }} USD</small></h3>
+
+</div>
+
+{%  endblock %}
+
